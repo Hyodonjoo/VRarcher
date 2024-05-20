@@ -4,7 +4,6 @@ public class ArrowCollision : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("collided");
         ArrowTarget target = other.gameObject.GetComponent<ArrowTarget>();
         if (target != null)
         {
