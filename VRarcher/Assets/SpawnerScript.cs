@@ -8,6 +8,7 @@ public class SpawnerScript : MonoBehaviour
     public GameObject Deer_male_prefab;
     public GameObject Wild_rabbit_prefab;
     public GameObject lb_sparrow;
+    public GameObject Wild_boar_prefab;
     public int animalCount = 10;
     public float spawnInterval = 10f; // 동물이 소환되는 간격 (10초)
     private float spawnTimer=0f; // 소환 타이머
@@ -25,6 +26,7 @@ public class SpawnerScript : MonoBehaviour
         animalQueue.Enqueue(Deer_male_prefab);
         animalQueue.Enqueue(Wild_rabbit_prefab);
         animalQueue.Enqueue(lb_sparrow);
+        animalQueue.Enqueue(Wild_boar_prefab);
 
     }
 
