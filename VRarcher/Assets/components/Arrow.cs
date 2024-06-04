@@ -9,6 +9,7 @@ public class Arrow : MonoBehaviour
 
 	public void Start()
 	{
+		this.gameObject.SetActive(true);
 		lifeTimer = lifetime;
 	}
 
@@ -18,7 +19,7 @@ public class Arrow : MonoBehaviour
 
 		if (lifeTimer <= 0)
 		{
-			Destroy(gameObject);
+			this.gameObject.SetActive(false);
 		}
 	}
 
