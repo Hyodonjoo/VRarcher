@@ -4,6 +4,7 @@ public class Arrow : MonoBehaviour
 {
 	public float lifetime = 10f;
 	private float lifeTimer;
+	private bool hitTarget = false;
 
 	public ArrowCollision arrowCollision;
 
@@ -11,20 +12,33 @@ public class Arrow : MonoBehaviour
 	{
 		this.gameObject.SetActive(true);
 		lifeTimer = lifetime;
+		this.hitTarget = false;
 	}
 
 	public void Update()
 	{
-		lifeTimer -= Time.deltaTime;
-
-		if (lifeTimer <= 0)
+		if (!hitTarget)
 		{
-			this.gameObject.SetActive(false);
+			lifeTimer -= Time.deltaTime;
+
+			if (lifeTimer <= 0)
+			{
+				this.gameObject.SetActive(false);
+			}
 		}
 	}
 
 	public void OnArrowHitTarget(ArrowTarget target)
 	{
+		Debug.Log("hit a target");
+
 		ScoreManager.Instance.AddScore(target);
+		var rb = GetComponent<Rigidbody>();
+		if (rb != null)
+		{
+			rb.isKinematic = true;
+		}
+
+		this.hitTarget = true;
 	}
 }
