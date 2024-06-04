@@ -1,0 +1,145 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: M_Beech_dead_logs_01_Leaves
+  m_Shader: {fileID: 4800000, guid: 640b54fae8b8970468a91c4bf1c7f474, type: 3}
+  m_ValidKeywords:
+  - _USEDYNAMICSNOWTSTATICMASKF_ON
+  - _USESNOW_ON
+  m_InvalidKeywords:
+  - _HEIGHTMAP1
+  - _HEIGHT_BASED_BLEND
+  - _LAYER_MAPPING_TRIPLANAR1
+  - _MASKMAP
+  - _MASKMAP0
+  - _MASKMAP1
+  - _NORMALMAP
+  - _NORMALMAP0
+  - _NORMALMAP1
+  - _NORMALMAP_TANGENT_SPACE
+  - _NORMALMAP_TANGENT_SPACE0
+  - _NORMALMAP_TANGENT_SPACE1
+  - _NORMALMAP_TANGENT_SPACE2
+  - _NORMALMAP_TANGENT_SPACE3
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses:
+  - DistortionVectors
+  - TransparentDepthPrepass
+  - TransparentDepthPostpass
+  - TransparentBackface
+  - MOTIONVECTORS
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseColorMap1:
+        m_Texture: {fileID: 2800000, guid: 5af05d805d74c974286984104e05ccd9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMapAlbedoRNyGNxA:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HeightMap1:
+        m_Texture: {fileID: 2800000, guid: 14432565cb030e643a4e7da866b10455, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskMap1:
+        m_Texture: {fileID: 2800000, guid: 09741e4705fa89b4e92c8135aea63d5e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetalicRAmbientOcclusionGSmoothnessA:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap1:
+        m_Texture: {fileID: 2800000, guid: 3905e92499e0b194587776e8f6cd4c75, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SnowAlbedoRGB:
+        m_Texture: {fileID: 2800000, guid: 5af05d805d74c974286984104e05ccd9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SnowHeightG:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SnowMaskB:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SnowMetalicRAmbientOcclusionGSmothnessA:
+        m_Texture: {fileID: 2800000, guid: 09741e4705fa89b4e92c8135aea63d5e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SnowNormalRGB:
+        m_Texture: {fileID: 2800000, guid: 3905e92499e0b194587776e8f6cd4c75, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AmbientOcclusionPower: 1
+    - _BumpScale: 0
+    - _DetailAlbedoPower: 0
+    - _DetailNormalMapScale: 0
+    - _HeightAmplitude1: 0.0374
+    - _HeightCenter1: 0.37831017
+    - _HeightMapParametrization1: 1
+    - _HeightMax1: -1.31
+    - _HeightMin1: 1
+    - _HeightOffset1: 0.5
+    - _HeightPoMAmplitude1: 1.5
+    - _HeightTessAmplitude1: 3.74
+    - _HeightTessCenter1: 0.512
+    - _InvTilingScale1: 2
+    - _MetallicPower: 1
+    - _NormalScale1: 1.052
+    - _Smoothness1: 0
+    - _SmoothnessPower: 1
+    - _SnowAmbientOcclusionPower: 1
+    - _SnowHardness: 5
+    - _SnowHeightSharpness: 0.3
+    - _SnowMaskPower: 1
+    - _SnowMaxAngle: 90
+    - _SnowMetallicPower: 1
+    - _SnowNormalCoverHardness: 0
+    - _SnowNormalScale: 0
+    - _SnowSmoothnessPower: 1
+    - _SnowTiling: 2
+    - _Snow_Amount: 0.13
+    - _Snow_AmountGrowSpeed: 3
+    - _Snow_Min_Height: -1000
+    - _Snow_Min_Height_Blending: 1
+    - _TriplanarCoverFalloff: 8
+    - _UseDynamicSnowTStaticMaskF: 1
+    - _UseSnow: 1
+    - __dirty: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _SnowAlbedoColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
