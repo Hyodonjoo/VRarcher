@@ -9298,7 +9298,7 @@ MonoBehaviour:
   arrowPrefab: {fileID: 7514249998307126596, guid: 7dce32db9293c2a4aa4b31b50bc7cead, type: 3}
   arrowSpawnPoint: {fileID: 1884723523}
   shootInterval: 0.5
-  rotationAngleX: 0
+  rotationAngleX: 30
   rotationAngleY: 0
   rotationAngleZ: 0
   arrowSpeed: 15
@@ -22360,8 +22360,9 @@ GameObject:
   - component: {fileID: 2004370304}
   - component: {fileID: 2004370303}
   - component: {fileID: 2004370302}
+  - component: {fileID: 2004370305}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: TargetWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22445,6 +22446,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004370300}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2004370305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004370300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e0b4c4124e24964985c7689347bec23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreValue: 1
+  disableOnHit: 0
 --- !u!4 &2006517924 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4296641989555099402, guid: 4874f83364e7c64458dded565ba8ef72, type: 3}
