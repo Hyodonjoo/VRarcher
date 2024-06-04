@@ -1,24 +1,20 @@
 using UnityEngine;
 
-public class ArrowTarget : MonoBehaviour
+public class ArrowTarget : MonoBehaviour, IScore
 {
     public int scoreValue = 1;
-    public bool destroyOnHit = true;
+    public bool disableOnHit = true;
 
-    private void OnCollisionEnter(Collision collision)
+    public int GetScore()
+	{
+        return scoreValue;
+	}
+
+    public void OnCollisionEnter(Collision collision)
     {
-        ArrowTarget target = collision.gameObject.GetComponent<ArrowTarget>();
-        if (target != null)
-        {
-            if (ScoreManager.Instance != null)
-            {
-                ScoreManager.Instance.AddScore(target.scoreValue);
-            }
-
-            if (destroyOnHit)
-            {
-                Destroy(gameObject);
-            }
-        }
+        if (this.disableOnHit)
+		{
+            this.gameObject.SetActive(false);
+		}
     }
 }

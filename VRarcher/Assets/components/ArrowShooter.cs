@@ -30,13 +30,13 @@ public class ArrowShooter : MonoBehaviour
 
 	private void ShootArrow()
 	{
-		Quaternion rotation = arrowSpawnPoint.rotation * Quaternion.Euler(rotationAngleX, rotationAngleY, rotationAngleZ);
-		GameObject arrowInstance = Instantiate(arrowPrefab, arrowSpawnPoint.position, rotation);
+		//Quaternion rotation = transform.rotation * Quaternion.Euler(rotationAngleX, rotationAngleY, rotationAngleZ);
+		GameObject arrowInstance = Instantiate(arrowPrefab, arrowSpawnPoint.position, arrowPrefab.transform.rotation);
 
 		Rigidbody rb = arrowInstance.GetComponent<Rigidbody>();
 		if (rb != null)
 		{
-			rb.velocity = arrowInstance.transform.forward * arrowSpeed;
+			rb.velocity = this.gameObject.transform.forward * arrowSpeed;
 		}
 	}
 }

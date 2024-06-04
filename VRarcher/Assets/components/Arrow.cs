@@ -5,12 +5,14 @@ public class Arrow : MonoBehaviour
 	public float lifetime = 10f;
 	private float lifeTimer;
 
-	private void Start()
+	public ArrowCollision arrowCollision;
+
+	public void Start()
 	{
 		lifeTimer = lifetime;
 	}
 
-	private void Update()
+	public void Update()
 	{
 		lifeTimer -= Time.deltaTime;
 
@@ -18,5 +20,10 @@ public class Arrow : MonoBehaviour
 		{
 			Destroy(gameObject);
 		}
+	}
+
+	public void OnArrowHitTarget(ArrowTarget target)
+	{
+		ScoreManager.Instance.AddScore(target);
 	}
 }
