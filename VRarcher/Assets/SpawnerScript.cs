@@ -22,10 +22,10 @@ public class SpawnerScript : MonoBehaviour
     {
         animalQueue = new Queue<GameObject>();
 
-        animalQueue.Enqueue(Brown_bear_prefab);
-        animalQueue.Enqueue(Deer_male_prefab);
-        animalQueue.Enqueue(Wild_rabbit_prefab);
-        animalQueue.Enqueue(lb_sparrow);
+        //animalQueue.Enqueue(Brown_bear_prefab);
+        //animalQueue.Enqueue(Deer_male_prefab);
+       // animalQueue.Enqueue(Wild_rabbit_prefab);
+      //  animalQueue.Enqueue(lb_sparrow);
         animalQueue.Enqueue(Wild_boar_prefab);
 
     }

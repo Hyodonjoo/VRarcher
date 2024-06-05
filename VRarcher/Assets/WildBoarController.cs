@@ -6,7 +6,7 @@ public class WildBoarController : MonoBehaviour
 {
     public GameObject player; // 플레이어의 GameObject
     public float speed = 3f; // Wild Boar의 이동 속도
-    public float attackDistance = 2.5f; // 공격 거리
+    public float attackDistance = 2f; // 공격 거리
     private Animator animator; // 애니메이터 컴포넌트
 
     void Start()
@@ -17,8 +17,9 @@ public class WildBoarController : MonoBehaviour
 
     void Update()
     {
-        float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
-        Debug.Log("거리 = " + distanceToPlayer); 
+        Vector3 playerPosition = player.transform.position;
+        float distanceToPlayer = Vector3.Distance(transform.position, playerPosition);
+        //Debug.Log("거리 = " + distanceToPlayer); 
 
         if (distanceToPlayer <= attackDistance)
         {
@@ -28,24 +29,26 @@ public class WildBoarController : MonoBehaviour
         }
         else 
         {
-            MoveTowardsPlayer();
+            MoveTowardsPlayer(playerPosition);
         }
         
     }
 
-    void MoveTowardsPlayer()
+    void MoveTowardsPlayer(Vector3 playerPosition)
     {
         // 이동 애니메이션 실행
         animator.SetBool("isRunning", true);
+        animator.SetBool("isAttacking", false);
 
         // 플레이어를 향해 회전
-        Vector3 direction = (player.transform.position - transform.position).normalized;
+        Vector3 direction = (playerPosition - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f); // 회전 속도는 더 빠르게 설정
 
         // 앞으로 이동
         transform.position += direction * speed * Time.deltaTime;
         //Debug.Log("x : " + transform.position.x + " y : " + transform.position.y + " z : " + transform.position.z);
+        Debug.Log("x : " + direction.x + " y : " + direction.y + " z : " + direction.z);
     }
 
     void StopMoving()
