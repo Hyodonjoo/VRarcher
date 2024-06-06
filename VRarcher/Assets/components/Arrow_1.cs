@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Arrow : MonoBehaviour
+public class Arrow_1 : MonoBehaviour
 {
 	public float lifetime = 10f;
 	private float lifeTimer;

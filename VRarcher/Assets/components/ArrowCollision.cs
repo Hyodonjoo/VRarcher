@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class ArrowCollision : MonoBehaviour
 {
-    private Arrow parentArrow;
+    private Arrow_1 parentArrow;
 
 	public void Awake()
 	{
-        parentArrow = GetComponentInParent<Arrow>();
+        parentArrow = GetComponentInParent<Arrow_1>();
 	}
 
 	private void OnTriggerEnter(Collider other)
