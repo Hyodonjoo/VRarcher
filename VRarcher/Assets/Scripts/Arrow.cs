@@ -47,30 +47,7 @@ public class Arrow : MonoBehaviour
             transform.rotation = newRotation;
             yield return null;
         }
-    }
-    private void FixedUpdate()
-    {
-        if(_inAir)
-        {
-            CheckCollision();
-            _lastPosition = tip.position;
-        }
-    }
-    private void CheckCollision()
-    {
-        if(Physics.Linecast(_lastPosition, tip.position, out RaycastHit hitinfo))
-        {
-            if(hitinfo.transform.gameObject.layer != 8)
-            {
-                if(hitinfo.transform.TryGetComponent(out Rigidbody body)) {
-                    _rigidBody.interpolation = RigidbodyInterpolation.None;
-                    transform.parent = hitinfo.transform;
-                    body.AddForce(_rigidBody.velocity, ForceMode.Impulse);
-                }
-                Stop();
-            }
-        }
-    }
+    }    
     private void Stop()
     {
         _inAir = false;
