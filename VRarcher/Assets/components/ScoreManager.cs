@@ -34,6 +34,7 @@ public class ScoreManager : MonoBehaviour
         }
 
         this.scores = new List<IScore>();
+        UpdateScoreText();
     }
 
     public void Reset()

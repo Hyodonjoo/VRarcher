@@ -6,7 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class MoveToMenu : MonoBehaviour
 {
+    [Header("UI Pages")]
+    public GameObject Clear;
+
+    [Header("Main Menu Buttons")]
     public Button MenuButton;
+    public Button RestartButton;
 
     void Start()
     {
@@ -15,6 +20,10 @@ public class MoveToMenu : MonoBehaviour
 
     void OnMenuButtonClick()
     {
-        SceneManager.LoadScene("Scene_Practice_Map");
+        ScoreManager.Instance.Reset();
+        Clear.SetActive(false);
+        MenuButton.gameObject.SetActive(false);
+        RestartButton.gameObject.SetActive(false);
+        SceneManager.LoadScene("map_waitroom");
     }
 }
