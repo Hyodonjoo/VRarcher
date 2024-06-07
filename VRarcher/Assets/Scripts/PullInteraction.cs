@@ -57,7 +57,7 @@ public class PullInteraction : XRBaseInteractable
     public void UpdateString()
     {
         Vector3 LinePosition = Vector3.forward * Mathf.Lerp(start.transform.localPosition.z, end.transform.localPosition.z, pullAmount);        
-        notch.transform.localPosition = new Vector3(notch.transform.localPosition.x, notch.transform.localPosition.y, LinePosition.z);
+        notch.transform.localPosition = new Vector3(notch.transform.localPosition.x, notch.transform.localPosition.y, LinePosition.z +.3f);
         _lineRenderer.SetPosition(1, LinePosition);
     }
     
