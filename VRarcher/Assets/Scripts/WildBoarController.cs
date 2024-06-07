@@ -18,7 +18,7 @@ public class WildBoarController : MonoBehaviour
     void Update()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
-        Debug.Log("거리 = " + distanceToPlayer); 
+        //Debug.Log("거리 = " + distanceToPlayer); 
 
         if (distanceToPlayer <= attackDistance)
         {
@@ -37,6 +37,7 @@ public class WildBoarController : MonoBehaviour
     {
         // 이동 애니메이션 실행
         animator.SetBool("isRunning", true);
+        animator.SetBool("isAttacking", false);
 
         // 플레이어를 향해 회전
         Vector3 direction = (player.transform.position - transform.position).normalized;

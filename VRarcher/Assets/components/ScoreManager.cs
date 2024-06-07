@@ -1,42 +1,65 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-	public static ScoreManager Instance { get; private set; }
-	private List<IScore> scores;
-	public int TotalScore
-	{
-		get
-		{
-			return this.scores.Select((x) => x.GetScore()).Sum();
-		}
-	}
+    public static ScoreManager Instance { get; private set; }
+    private List<IScore> scores;
 
-	private void Awake()
-	{
-		if (Instance != null && Instance != this)
-		{
-			Destroy(gameObject);
-		}
-		else
-		{
-			Instance = this;
-			DontDestroyOnLoad(gameObject);
-		}
+    public TextMeshProUGUI scoreText;
 
-		this.scores = new List<IScore>();
-	}
+    public delegate void ScoreReached();
+    public static event ScoreReached OnScoreReached;
 
-	public void Reset()
-	{
-		this.scores.Clear();
-	}
+    public int TotalScore
+    {
+        get
+        {
+            return this.scores.Select((x) => x.GetScore()).Sum();
+        }
+    }
 
-	public void AddScore(IScore score)
-	{
-		this.scores.Add(score);
-		Debug.Log("Total Score: " + this.TotalScore);
-	}
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+
+        this.scores = new List<IScore>();
+        UpdateScoreText();
+    }
+
+    public void Reset()
+    {
+        this.scores.Clear();
+        UpdateScoreText();
+    }
+
+    public void AddScore(IScore score)
+    {
+        this.scores.Add(score);
+        Debug.Log("Total Score: " + this.TotalScore);
+        UpdateScoreText();
+        if (this.TotalScore >= 10) // 점수가 50점 이상이면 이벤트 호출
+        {
+            OnScoreReached?.Invoke();
+        }
+
+    }
+
+    private void UpdateScoreText()
+    {
+        if (scoreText != null)
+        {
+            scoreText.text = this.TotalScore.ToString() + "/50";
+        }
+    }
 }
