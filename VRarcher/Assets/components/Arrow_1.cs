@@ -8,7 +8,12 @@ public class Arrow_1 : MonoBehaviour
 
 	public ArrowCollision arrowCollision;
 
-	public void Start()
+	private AudioSource _audioSource;
+    public void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
+    public void Start()
 	{
 		this.gameObject.SetActive(true);
 		lifeTimer = lifetime;
@@ -29,16 +34,20 @@ public class Arrow_1 : MonoBehaviour
 	}
 
 	public void OnArrowHitTarget(ArrowTarget target)
-	{
+	{		
 		Debug.Log("hit a target");
 
 		ScoreManager.Instance.AddScore(target);
 		var rb = GetComponent<Rigidbody>();
 		if (rb != null)
 		{
-			rb.isKinematic = true;
-		}
+			rb.isKinematic = true;            
+        }
 
 		this.hitTarget = true;
 	}
+    private void PlayHitSound()
+    {
+        _audioSource.Play();
+    }
 }
