@@ -48,7 +48,7 @@ public class ScoreManager : MonoBehaviour
         this.scores.Add(score);
         Debug.Log("Total Score: " + this.TotalScore);
         UpdateScoreText();
-        if (this.TotalScore >= 10) // 점수가 50점 이상이면 이벤트 호출
+        if (this.TotalScore >= 30) // 점수가 50점 이상이면 이벤트 호출
         {
             OnScoreReached?.Invoke();
         }
@@ -59,7 +59,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = this.TotalScore.ToString() + "/50";
+            scoreText.text = this.TotalScore.ToString() + "/30";
         }
     }
 }
